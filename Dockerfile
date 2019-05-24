@@ -1,13 +1,14 @@
 # Use an official Python runtime as a parent image
 FROM node
 
+RUN git clone https://github.com/kanhaiya15/docker-expressjs.git
+RUN cd docker-expressjs
+
 # Set the working directory to /opt/expressjs
 WORKDIR /opt/expressjs
 
 # Copy the current directory contents into the container at /opt/expressjs
 COPY . /opt/expressjs
-
-RUN git --version
 
 # Install needed packages
 RUN npm install
